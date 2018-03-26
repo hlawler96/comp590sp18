@@ -29,6 +29,7 @@ public class LZWEncoderApp {
 		int DICT_SIZE = 65536;
 		String filename = "/Users/haydenlawler/documents/590_Videos/pinwheel.450p.yuv";
 		System.out.println("Now Encoding File: " + filename + " at " + LocalDateTime.now());
+//		Iterator<Integer> iterator = diffSetup(filename);
 		Iterator<Integer> iterator = linearSetup(filename);
 
 		int width = 0;
@@ -41,13 +42,13 @@ public class LZWEncoderApp {
 			height = 720;
 		}
 
-		int[] initialValues = new int['Ā'];
+		int[] initialValues = new int[256];
 		for (int k = 0; k < initialValues.length; k++) {
 			initialValues[k] = k;
 		}
 
 		Dictionary dict = new Dictionary(initialValues);
-		ArrayList<Integer> encoding = new ArrayList();
+		ArrayList<Integer> encoding = new ArrayList<Integer>();
 
 		String temp = "" + iterator.next();
 		while (iterator.hasNext()) {
@@ -104,6 +105,8 @@ public class LZWEncoderApp {
 					for (int l = 0; l < next.length; l++) {
 						String number = next[l];
 						int num = Integer.parseInt(number);
+						//Comment this line out for Linear Encoding
+//						if(frame > 0) num = decodedVideo[frame-1][y][x] + num;
 						decodedVideo[frame][y][x] = num;
 
 						if (l != next.length - 1) {

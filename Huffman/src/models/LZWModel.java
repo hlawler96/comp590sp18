@@ -33,9 +33,6 @@ public class LZWModel implements SourceModel {
 		private int _value;
 
 		public LZWSymbol(int value) {
-			if (value < 0 || value > 255) {
-				throw new IllegalArgumentException("Value out of range");
-			}
 			_value = value;
 		}
 
@@ -46,7 +43,7 @@ public class LZWModel implements SourceModel {
 		@Override
 		public int compareTo(Symbol o) {
 			if (!(o instanceof LZWSymbol)) {
-				throw new IllegalArgumentException("Unsigned8BitSymbol only comparable to type of same");
+				throw new IllegalArgumentException("LZWSymbol only comparable to type of same");
 			}
 			LZWSymbol other = (LZWSymbol) o;
 			if (other.getValue() > getValue()) {
