@@ -1,6 +1,5 @@
 # COMP 590-80, Spring 2018 Source Code
 
-This code is a framework for developing programming assignments / projects for COMP 590 - Special Topics on Data Compression taught at UNC, Spring 2018.
+Code For Project.
 
-## Huffman
-Refer to [BUILD.md](Huffman/BUILD.md)
+Note: There was an issue and this code has to be decompiled from .class files. Because of this some of the code looks wierd, but the code is certainly functional
